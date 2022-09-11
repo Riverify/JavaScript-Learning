@@ -4,11 +4,24 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script type="text/javascript">
+        // ===============================
         function demo1() {
             alert("demo1");
         }
 
-        demo1();
+        var demo2 = function () {
+            alert("demo2")
+        }
+
+        var demo3 = new Function("alert('demo3')");
+
+        // ================================
+
+        function demo4(a, b) {
+            alert(a + b);
+        }
+
+        demo4(2, 5)
     </script>
 </head>
 <body>
