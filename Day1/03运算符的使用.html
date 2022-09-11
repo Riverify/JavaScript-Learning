@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var a = 12;
+        var b = 10;
+        // alert(a + b) // 22
+        // alert(a - b) // 2
+        // alert(a / b) // 1.2
+        var c = "123";
+        // alert(a + b + c); // 22123
+        // alert(a + c + b); // 1212310
+        var d = true;
+        // alert(d + a); // 12
+        var s = 1;
+        var s1 = '1';
+        var s2 = true;
+        var s3 = "true";
+
+        // == 等值符，内容类型不一致，会统一转成 Number
+        alert(s == s1); // true
+        alert(s == s2); // true
+        alert(s == s3); // false
+        alert(s1 == s2);// true
+        alert(s1 == s3);// false
+        alert(s2 == s3);// false
+
+        // === 等同符
+        alert(s === s1); // f
+        alert(s === s2); // f
+        alert(s === s3); // f
+        alert(s1 === s2);// f
+        alert(s1 === s3);// f
+        alert(s2 === s3);// f
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
