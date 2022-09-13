@@ -42,9 +42,23 @@
             console.log("after after: " + arr); // 多余的内容会省去
         }
 
+        // 数组的遍历
+        function demo4() {
+            // A
+            arr = [1, 1, 4, 5, 1, 4];
+            for (var i = 0; i < arr.length; i++) {
+                console.log(arr[i]);
+            }
+            // B
+            for (var i in arr) {  // 'i' means index, not the element
+                console.log(arr[i]);
+            }
+        }
+
         demo1();
         demo2();
         demo3();
+        demo4();
 
 
     </script>
