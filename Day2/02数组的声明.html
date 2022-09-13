@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组的声明 </title>
+    <script type="text/javascript">
+
+        // 数组的定义
+        function demo1() {
+            var arr = new Array();
+            var arr2 = new Array(5); // 数组长度
+            // var arr3 = new Array(1, 1, 4);
+            var arr3 = [1, 1, 4, 'well', true, new Date()];// 定义数组中的元素
+
+            console.log(arr3); // 打印到控制台
+        }
+
+        // 数组的使用
+        function demo2() {
+            var arr = [];
+            arr[0] = 1;
+            arr[1] = "river";
+            arr[2] = true;
+            arr[6] = new Date(); // js数组下标可以不连续
+
+            console.log(arr);
+
+        }
+
+        // 数组的扩充和缩小
+        function demo3() {
+            var arr = [1, 2, 3];
+
+            console.log("before: " + arr);
+
+            arr.length = 8;
+
+            console.log("after: " + arr)  // 自动补充空字符串
+
+            arr.length = 1;
+
+            console.log("after after: " + arr); // 多余的内容会省去
+        }
+
+        demo1();
+        demo2();
+        demo3();
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
