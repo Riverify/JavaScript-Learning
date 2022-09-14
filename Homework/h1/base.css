@@ -1,0 +1,21 @@
+h1 {
+    color: blue;
+    text-align: center;
+    font-family: "Noto Sans CJK HK Black", serif;
+}
+
+p {
+    color: darkred;
+}
+
+.pic {
+    float: left;
+}
+
+.subP {
+    font-style: italic;
+}
+
+.mainP {
+    text-indent: 35px;
+}
