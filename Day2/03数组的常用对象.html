@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript">
+        // 日期对象
+        function demo1() {
+            var date = new Date();
+            console.log(date.getFullYear());
+            console.log(date.getMonth()); // 从０开始 月
+            console.log(date.getDate());  // 日
+            console.log(date.getDay());　 // 从星期日开始 星期数
+            console.log(date.getHours()); // 小时
+            console.log(date.getMinutes()) // ...
+            console.log(date.getSeconds()); // ...
+            console.log(date.toLocaleString());
+        }
+
+        demo1();
+
+        // Math
+        function demo2() {
+            console.log(Math.random());
+            console.log(Math.ceil(12.2)); // 向上取整 13
+            console.log(Math.floor(12.9)); // 向下取整 12
+            console.log(Math.round(2.4)); // ４下５上
+
+            // 如何获得四位随机　
+            console.log(Math.floor(Math.random() * 9000 + 1000))
+        }
+
+        demo2();
+
+        // String
+        function demo3() {
+            var str = "星-期-三";
+            // var str = new String("星-期-三");
+
+            console.log(str.substr(2)); // 从下标为２的字符串开始输出
+
+            console.log(str.substr(2, 1)); // 从下标为２的字符串开始输出 长度为１
+
+            console.log(str.substring(2, 4)); // 从下标为２开始 到下标为４(不到４)
+
+            console.log(str.split('-')); // 分割
+        }
+
+        demo3();
+
+        // Global
+        function demo4() {
+            var a = "var uu = 'river'";
+
+            eval(a); // 将字符串变成可执行的js
+
+            // alert(uu);
+
+            var b = "123";
+
+            alert(isNaN(b));
+        }
+
+        demo4();
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
