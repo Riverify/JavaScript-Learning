@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取元素对象</title>
+    <script type="text/javascript">
+        function demo1() {
+            // 通过id获取元素对象
+            console.log(window.document.getElementById("sp_1"));
+        }
+
+        function demo2() {
+            // 通过标签名获取元素对象
+            console.log(window.document.getElementsByTagName("span")[1]); // 通过数组的方式获取特定的元素
+        }
+
+        function demo3() {
+            // 通过class获取元素对象
+            console.log(window.document.getElementsByClassName("sp")[0]); // 通过数组的方式获取特定的元素
+        }
+    </script>
+</head>
+<body>
+<input type="button" onclick="demo1()" value="元素对象获得一">
+<input type="button" onclick="demo2()" value="元素对象获得二">
+<input type="button" onclick="demo3()" value="元素对象获得三">
+<hr/>
+<span id="sp_1">river</span>
+<span>luo</span>
+<span class="sp">APEX</span>
+<span class="sp">good</span>
+</body>
+</html>

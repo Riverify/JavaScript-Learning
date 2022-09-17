@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>间接获取</title>
+    <script type="text/javascript">
+        function demo1() {
+            // 获取div１
+            var d1 = document.getElementById("div1");
+            // 获取d1下的所有子标签
+            var childNodes = d1.childNodes;
+
+            console.log(childNodes[3]);
+        }
+
+        function demo2() {
+            var sp = document.getElementById("sp1");
+            var di = sp.parentNode;
+
+            console.log(di);
+        }
+
+        function demo3() {
+            var a = document.getElementById("sp1"); // riverA
+            var b = a.nextElementSibling;           // 下一个元素节点 riverB
+            var c = a.previousElementSibling;
+
+
+            console.log(b);
+            console.log(c);
+        }
+    </script>
+</head>
+<body>
+
+<input type="button" onclick="demo1()" value="获取子标签">
+<input type="button" onclick="demo2()" value="获取父标签">
+<input type="button" onclick="demo3()" value="获取兄弟标签">
+
+<hr/>
+
+<div id="div1">
+    <span>river</span>
+    <span id="sp1">riverA</span>
+    <span>riverB</span>
+</div>
+
+<div>
+    <span>river</span>
+    <span>river</span>
+    <span>river</span>
+</div>
+
+</body>
+</html>
