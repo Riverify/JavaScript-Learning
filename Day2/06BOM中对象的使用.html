@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        // Location
+        function demo1() {
+            console.log(window.location.host);
+            console.log(window.location.hostname);
+            console.log(window.location.port);
+            console.log(window.location.protocol); // 协议 http
+            console.log(window.location.href); // 当前地址栏的信息
+
+            // window.location.reload(); // 刷新
+        }
+
+        // History
+        function demo2() {
+            window.history.back();
+            window.history.forward();
+            window.history.go(-2); // 向后跳转两个界面  参数为0:代表刷新
+            alert(window.history.length); // 历史记录条数
+        }
+
+        // Screen
+        function demo3() {
+            var width = window.screen.width;
+            var height = window.screen.height;
+            console.log(width + " " + height);
+        }
+
+        // Navigator
+        function demo4() {
+            console.log(window.navigator.userAgent);
+        }
+    </script>
+</head>
+
+<body>
+<input type="button" onclick="demo1()" value="Location">
+<input type="button" onclick="demo2()" value="History">
+<input type="button" onclick="demo3()" value="Screen">
+<input type="button" onclick="demo4()" value="Navigator">
+
+</body>
+</html>

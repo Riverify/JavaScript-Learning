@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+
+    <script type="text/javascript">
+        // 弹框的三种方式
+        function demo1() {
+            //============================================
+
+            let date = new Date();
+            window.alert(date.toLocaleString());
+
+            // ===========================================
+
+            var flag = window.confirm("Are you sure?");
+            alert(flag);
+
+            // ===========================================
+
+            var s = window.prompt("请输入", "例如：114514");
+            alert(s);
+
+        }
+
+        function demo2() {
+            var date = new Date();
+            var time = date.toLocaleString();
+            document.getElementById("sp").innerHTML = time;
+
+        }
+
+        // 定时器　间隔调用  可加引号可不加，加引号需写方法的括号
+        var t = window.setInterval(demo2, 1000); // 1000ms
+
+        // 调用一次
+        // window.setTimeout("demo2()", 1000)
+
+        function stopTime() {
+            window.setInterval(t);
+        }
+
+        function demo3() {
+            window.close();
+            window.open("https://www.youtube.com");
+        }
+
+    </script>
+</head>
+<body onload="demo2()">
+<input type="button" onclick="demo1()" name="" id="" value="弹框"/>
+<span id="sp"></span>
+<input type="button" onclick="demo3()" value="close">
+</body>
+</html>
