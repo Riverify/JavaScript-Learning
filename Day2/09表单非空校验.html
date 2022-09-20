@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+    <script type="text/javascript">
+        function isNotNull() {
+
+        }
+
+        function checkName() {
+            var uname = document.getElementById("uname").value;
+            var unameSpan = document.getElementById("uname_span");
+            if (uname == null || uname == '') {
+                unameSpan.innerText = "用户名不能为空";
+                unameSpan.style.color = "red";
+            } else {
+                unameSpan.innerText = "可行";
+                unameSpan.style.color = "green";
+            }
+
+        }
+
+        function checkPwd() {
+            var pwd = document.getElementById("pwd").value;
+            var pwdSpan = document.getElementById("pwd_span");
+            if (pwd == null || pwd == '') {
+                pwdSpan.innerText = "密码不能为空";
+                pwdSpan.style.color = "red";
+            } else {
+                pwdSpan.innerText = "可行";
+                pwdSpan.style.color = "green";
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+<form action="04事件.html">
+    <p>
+        用户名:<input type="text" name="uname" id="uname" onblur="checkName()" value=""/>
+        <span id="uname_span"></span>
+    </p>
+    <p>
+        密码:<input type="password" name="pwd" id="pwd" onblur="checkPwd()"/>
+        <span id="pwd_span"></span>
+    </p>
+    <p>
+        <input type="submit" value="登陆" onclick="">
+    </p>
+</form>
+
+</body>
+</html>
