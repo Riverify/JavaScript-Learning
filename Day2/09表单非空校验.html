@@ -5,7 +5,7 @@
     <title>表单</title>
     <script type="text/javascript">
         function isNotNull() {
-
+            return checkName() && checkPwd();
         }
 
         function checkName() {
@@ -14,9 +14,11 @@
             if (uname == null || uname == '') {
                 unameSpan.innerText = "用户名不能为空";
                 unameSpan.style.color = "red";
+                return false;
             } else {
                 unameSpan.innerText = "可行";
                 unameSpan.style.color = "green";
+                return true;
             }
 
         }
@@ -27,9 +29,11 @@
             if (pwd == null || pwd == '') {
                 pwdSpan.innerText = "密码不能为空";
                 pwdSpan.style.color = "red";
+                return false;
             } else {
                 pwdSpan.innerText = "可行";
                 pwdSpan.style.color = "green";
+                return true;
             }
 
         }
@@ -37,7 +41,9 @@
     </script>
 </head>
 <body>
-<form action="04事件.html">
+
+<!-- 方法返 true: submit -->
+<form action="04事件.html" onsubmit="return isNotNull()">
     <p>
         用户名:<input type="text" name="uname" id="uname" onblur="checkName()" value=""/>
         <span id="uname_span"></span>
