@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单选择器</title>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+        function demo1() {
+            var d = $("#div1");
+            // d.css("backgroundColor", "royalblue");
+            // d.css("height", "400px");
+            // d.css("border-radius", "50%");
+            // d.css({"backgroundColor": "royalblue", "height": "400px", "border-radius": "50%"})
+
+            // 更改属性
+            // d.attr("class", "d");
+        }
+
+
+    </script>
+
+    <style>
+        #div1 {
+            width: 400px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+
+        .d {
+            width: 400px;
+            height: 400px;
+            background-color: rosybrown;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<input type="button" id="b1" value="操作css" onclick="demo1()">
+<hr/>
+<div id="div1"></div>
+
+</body>
+</html>
