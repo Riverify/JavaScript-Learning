@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.6.1.min.js" type="text/javascript"></script>
+    <script>
+        $(function () {
+            // 获得指定标签的第一个
+            // $("ul li").first().css("backgroundColor", "red");
+            // $("ul li:first").css("background-color", "red"); // 多种写法
+
+            // 获得指定标签的最后一个
+            // $("ul li").last().css("backgroundColor", "green");
+
+            // 获得下标为偶数/奇数对象
+            // $("ul li:even").css("backgroundColor", "yellow");
+            // $("ul li:odd").css("backgroundColor", "yellow");
+
+            // 获得指定下标索引的对象
+            // $("li").eq(2).css("backgroundColor", "purple");
+            // $("li:eq(3)").css("backgroundColor", "gold")
+
+            // 可以批量操作
+            // $("li").css("backgroundColor", "grey")
+
+            // 大于/小于
+            // $("li:gt(3)").css("backgroundColor", "lightyellow ")
+            // $("li:lt(2)").css("backgroundColor", "lightgreen")
+
+            // 子选择器  nth-child是从１开始的
+            // 匹配父元素下第n个
+            // $("ul li:nth-child(1)").css("backgroundColor", "royalblue")
+            // $("ul li:nth-child(odd)").css("backgroundColor", "royalblue")
+
+
+        })
+    </script>
+</head>
+<body>
+
+<div id="div1" style="height: 200px; border: 2px solid red">
+    <ul>
+        <li>List Item1</li>
+        <li>List Item2</li>
+        <li>List Item3</li>
+    </ul>
+    <ul>
+        <li>List Item4</li>
+        <li>List Item5</li>
+    </ul>
+</div>
+
+</body>
+</html>
