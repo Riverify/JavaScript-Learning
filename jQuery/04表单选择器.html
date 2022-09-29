@@ -6,10 +6,21 @@
     <script src="js/jquery-3.6.1.min.js"></script>
     <script>
         $(function () {
-            // 获取input标签中type=text的对象   :text   <限于在input表单>
+            // 获取input标签中type=text的对象   :text   <限于在表单>
             // $("input[type = text]").css("backgroundColor", "royalblue");
-            $(":text").css("backgroundColor", "royalblue");
-            $(":password").css("backgroundColor", "lightyellow");
+            // $(":text").css("backgroundColor", "royalblue");
+            // $(":password").css("backgroundColor", "lightyellow");
+
+            // 所有input
+            // $("input").css("backgroundColor", "lightgreen");
+
+            // 所有表单对象
+            // $(":input").css("backgroundColor", "lightgreen");
+
+            // 获得被选中的单复选框
+            $("input:checked")
+            // 被选中的下拉框
+            $("input:selected");
         })
 
     </script>
@@ -31,10 +42,16 @@
         出生日期:<input type="date" name="z_ birth">
     </p>
     <p>
+        爱好:
+        抽烟<input type="checkbox" name="z_interest" checked>
+        喝酒<input type="checkbox" name="z_interest">
+        烫头<input type="checkbox" name="z_interest">
+    </p>
+    <p>
         籍贯:<select name="y_uv">
         <option>--- 请选择 ---</option>
         <option>河北</option>
-        <option>安徽</option>
+        <option selected>安徽</option>
         <option>江西</option>
     </select>
     </p>
