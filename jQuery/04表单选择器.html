@@ -18,9 +18,14 @@
             // $(":input").css("backgroundColor", "lightgreen");
 
             // 获得被选中的单复选框
-            $("input:checked")
+            $("input:checked");
             // 被选中的下拉框
             $("input:selected");
+
+            // prop()检测
+            // var j = $("input[type = checkbox]").prop("checked");
+            var j = $("#uu ").prop("checked");
+            console.log(j);
         })
 
     </script>
@@ -43,7 +48,7 @@
     </p>
     <p>
         爱好:
-        抽烟<input type="checkbox" name="z_interest" checked>
+        抽烟<input type="checkbox" name="z_interest" id="uu" checked>
         喝酒<input type="checkbox" name="z_interest">
         烫头<input type="checkbox" name="z_interest">
     </p>
