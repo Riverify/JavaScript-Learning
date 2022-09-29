@@ -3,7 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>属性选择器</title>
-    <script src="js/jquery-3.6.1.min.js">
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+        $(function () {
+            // input中type为text的  [ = ]
+            // $("input[type = text]").css("border", "2px solid red");
+
+            // input中name是z开头的  ^
+            // $("input[name ^= z]").css("border", "2px solid red");
+
+            // input中name是d结束   $
+            $("input[name $= d]").css("border", "2px solid red");
+
+        })
 
     </script>
 </head>
@@ -15,16 +27,16 @@
 <hr/>
 <form>
     <p>
-        用户名:<input type="text">
+        用户名:<input type="text" name="z_name">
     </p>
     <p>
-        密码:<input type="password">
+        密码:<input type="password" name="z_password">
     </p>
     <p>
-        出生日期:<input type="date">
+        出生日期:<input type="date" name="z_ birth">
     </p>
     <p>
-        籍贯:<select>
+        籍贯:<select name="y_uv">
         <option>--- 请选择 ---</option>
         <option>河北</option>
         <option>安徽</option>
@@ -32,7 +44,9 @@
     </select>
     </p>
     <p>
-        备注:<input type="text">
+        备注:<label>
+        <textarea name="z_oow"></textarea>
+    </label>
     </p>
     <p>
         <input type="submit" value="提交">
