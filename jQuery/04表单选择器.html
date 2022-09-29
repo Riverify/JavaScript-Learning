@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单选择器</title>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+        $(function () {
+            // 获取input标签中type=text的对象   :text   <限于在input表单>
+            // $("input[type = text]").css("backgroundColor", "royalblue");
+            $(":text").css("backgroundColor", "royalblue");
+            $(":password").css("backgroundColor", "lightyellow");
+        })
+
+    </script>
+</head>
+<body>
+
+<h3>
+    注册页面
+</h3>
+<hr/>
+<form>
+    <p>
+        用户名:<input type="text" name="z_name">
+    </p>
+    <p>
+        密码:<input type="password" name="z_password">
+    </p>
+    <p>
+        出生日期:<input type="date" name="z_ birth">
+    </p>
+    <p>
+        籍贯:<select name="y_uv">
+        <option>--- 请选择 ---</option>
+        <option>河北</option>
+        <option>安徽</option>
+        <option>江西</option>
+    </select>
+    </p>
+    <p>
+        备注:<label>
+        <textarea name="z_oow"></textarea>
+    </label>
+    </p>
+    <p>
+        <input type="submit" value="提交">
+    </p>
+</form>
+</body>
+</html>
