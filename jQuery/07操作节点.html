@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>操作元素文本</title>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+        function demo1() {
+            var p = $("<p>List Item2</p>");
+            // 内部插入
+            // 追加元素 2种方法
+            // $("#div1").append(p);
+            // p.appendTo($("#div1"));
+
+            // 追加到前面
+            // $("#div1").prepend(p);
+
+            // 外部插入 after before insertAfter
+            // $("#div1").before(p);
+
+            // remove empty
+            // $("#div1").empty();
+            $("#div1").remove();
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="节点的操作" onclick="demo1()">
+
+<hr/>
+
+<div id="div1" style="width: 250px; height: 200px; border: 2px solid red">
+    <p>
+        List Item1
+    </p>
+</div>
+</body>
+</html>
