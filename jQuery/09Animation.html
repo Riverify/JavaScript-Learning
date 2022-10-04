@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+        $(function () {
+            $("#b1").click(function () {
+                // $("#div1").hide(200);
+                // $("#div1").show(200);
+                // $("#div1").slideUp(900);
+                // $("#div1").slideDown(900);
+                // $("#div1").fadeOut(300);
+                // $("#div1").fadeIn(300);
+
+                $("div").toggle(300);
+
+
+            })
+        })
+
+    </script>
+</head>
+<body>
+<input type="button" value="Animation" id="b1">
+
+<hr/>
+
+<div id="div1" style="height: 200px; background-color: aquamarine">
+</div>
+<div id="div2" style="height: 200px; background-color: rosybrown; display: none">
+</div>
+
+</body>
+</html>
