@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+        $(function () {
+            $("#btn1").click(function () {
+                alert("单击事件");
+            })
+            $("#btn1").dblclick(function () {
+                alert("双击事件");
+            })
+
+            $("#btn2").bind({
+                "click": function () {
+                    alert("well");
+                },
+                "dbclick": function () {
+                    alert("played");
+                }
+            })
+
+            // one
+            $("#btn3").one("click", function () {
+                alert("C");
+            })
+
+            // trigger
+            $("#btn4").click(function () {
+                $("#btn1").trigger("click");
+                $("#btn2").trigger("click");
+            })
+
+            // 事件解绑
+            $("#btn5").click(function () {
+                $("#btn1").unbind("click");
+            })
+        })
+
+    </script>
+</head>
+<body>
+<input type="button" value="事件绑定A" id="btn1">
+<input type="button" value="事件绑定B" id="btn2">
+<input type="button" value="事件绑定C" id="btn3">
+<input type="button" value="事件绑定D" id="btn4">
+<input type="button" value="事件绑定E" id="btn5">
+
+</body>
+</html>
