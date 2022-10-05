@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>注册</title>
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script>
+
+        $(function () {
+            yzm(); // 验证码
+
+            // 用户名校验
+            $("#uname").blur(function () {
+                let reg = /^[\u4e00-\u9fa5]{2,4}$/;
+                check("uname", reg);
+            })
+
+            // 密码校验
+            $("#pwd").blur(function () {
+                let reg = /^.{6,18}$/
+                check("pwd", reg);
+            })
+
+            // 手机号
+            $("#phone").blur(function () {
+                let reg = /^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|177|18[0|1|2|3|5|6|7|8|9]|19[0|1|2|3|4|5|6|7|8|9])\d{8}$/
+                check("phone", reg);
+            })
+
+            // 邮箱
+            $("#email").blur(function () {
+                let reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+                check("email", reg);
+            })
+
+            // 下拉框是否被选择
+            $("#sel").change(function () {
+                let val = $("#sel").val();
+                if (val === "0") {
+                    $("#span_sel").html("请选择籍贯").css("color", "red").addClass("error");
+                } else {
+                    $("#span_sel").html("已选择").css("color", "green").removeClass("error");
+                }
+            })
+
+            // 验证码
+            $("#yzm1").blur(function () {
+                let y = $("#yzm1").val();
+                let y2 = $("#yzm2").text();
+                if (y == null || y == '') {
+                    $("#yzm3").html("验证码不能为空").css("color", "red").addClass("error");
+                } else if (y === y2) {
+                    $("#yzm3").html("验证码正确").css("color", "green").removeClass("error");
+                } else {
+                    $("#yzm3").html("验证码错误").css("color", "red").addClass("error");
+                }
+
+            })
+
+            // 协议
+            $("#check").click(function () {
+                let c = $("#check").prop("checked");
+                // if (c) {
+                //     $("#sub").prop("disabled", false);
+                // } else {
+                //     $("#sub").prop("disabled", true);
+                // }
+                $("#sub").prop("disabled", !c);
+            })
+
+            // submit校验
+            $("form").submit(function () {
+                $("#uname").trigger("blur");
+                $("#pwd").trigger("blur");
+                $("#phone").trigger("blur");
+                $("#email").trigger("blur");
+                $("#sel").trigger("change");
+                $("#yzm1").trigger("blur");
+
+                return $(".error").length <= 0;
+
+
+            })
+
+        })
+
+
+        function check(id, reg) {
+            var n = $("#" + id);
+            if (n.val() == null || n.val() == '') {
+                $("#span_" + id).html(n.attr("alt") + "不能为空").css("color", "red").addClass("error");
+            } else if (reg.test(n.val())) {
+                $("#span_" + id).html(n.attr("alt") + "合法").css("color", "green").removeClass("error");
+            } else {
+                $("#span_" + id).html(n.attr("alt") + "不合法").css("color", "red").addClass("error");
+            }
+        }
+
+        // 产生验证码
+        function yzm() {
+            var yzm = Math.floor(Math.random() * 9000 + 1000);
+            $("#yzm2").text(yzm);
+        }
+    </script>
+
+</head>
+<body>
+<center>
+    <h3>注册页面</h3>
+    <hr/>
+    <form action="" method="get">
+        <table>
+            <tr height="35px">
+                <td width="150px">用户名：</td>
+                <td width="400px">
+                    <input type="text" name="uname" id="uname" value="张三三" alt="用户名"/>
+                    <span id="span_uname" style="color: gray">2~4位汉字</span>
+                </td>
+            </tr>
+            <tr height="35px">
+                <td>密码：</td>
+                <td>
+                    <input type="password" name="pwd" id="pwd" value="123456" alt="密码"/>
+                    <span id="span_pwd" style="color: gray">6~18位</span>
+                </td>
+            </tr>
+            <tr height="35px">
+                <td>手机号：</td>
+                <td>
+                    <input type="text" name="phone" id="phone" value="18231932733" alt="手机号"/>
+                    <span id="span_phone"></span>
+                </td>
+            </tr>
+            <tr height="35px">
+                <td>邮箱：</td>
+                <td>
+                    <input type="text" name="mail" id="email" value="2767501426@qq.com" alt="邮箱"/>
+                    <span id="span_email"></span>
+                </td>
+            </tr>
+            <tr height="35px">
+                <td>性别：</td>
+                <td>
+                    男：<input type="radio" name="sex" value="1"/>
+                    女：<input type="radio" name="sex" value="0"/>
+                </td>
+            </tr>
+            <tr height="35px">
+                <td>爱好：</td>
+                <td>
+                    <input type="checkbox" name="fav" value="1"/>唱歌
+                    <input type="checkbox" name="fav" value="2"/>睡觉
+                    <input type="checkbox" name="fav" value="3"/>APEX<br/>
+                    <input type="checkbox" name="fav" value="4"/>旅游
+                    <input type="checkbox" name="fav" value="5"/>高尔夫
+                    <input type="checkbox" name="fav" value="6"/>篮球
+                    <span id="span_fav"></span>
+                </td>
+            </tr>
+            <tr height="35px">
+                <td>籍贯：</td>
+                <td>
+                    <select name="adress" id="sel">
+                        <option value="0">--请选择--</option>
+                        <option value="1">河南</option>
+                        <option value="2">湖南</option>
+                        <option value="3">海南</option>
+                        <option value="4">云南</option>
+                    </select>
+                    <span id="span_sel"></span>
+                </td>
+            </tr>
+
+            <tr height="35px">
+                <td>验证码：</td>
+                <td>
+                    <input type="text" style="width: 100px; height: 60px;" id="yzm1"/>
+
+                    <span id="yzm2" onclick="yzm()"></span>
+
+                    <span id="yzm3"></span>
+                </td>
+            </tr>
+
+            <tr height="35px">
+                <td>个人介绍：</td>
+                <td>
+                    <textarea name="intro" rows="8" cols="30"></textarea>
+                </td>
+            </tr>
+
+            <tr height="35px">
+                <td colspan="2" align="center">
+                    <input type="checkbox" name="" id="check" value="">是否同一本公司协议
+                </td>
+            </tr>
+            <tr height="35px">
+                <td colspan="2" align="center">
+                    <input type="submit" id="sub" value="注册" disabled="true"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</center>
+
+</body>
+</html>
