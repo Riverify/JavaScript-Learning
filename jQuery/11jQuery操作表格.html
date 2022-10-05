@@ -1,7 +1,37 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>jQuery操作表格</title>
     <meta charSet="UTF-8"/>
+    <title>jQuery操作表格</title>
+
+    <script src="js/jquery-3.6.1.min.js"></script>
+
+    <script>
+        $(function () {
+            // 全选
+            $("#chks").click(function () {
+                let ch = $("#chks").prop("checked");
+                $("input[name='chk']").prop("checked", ch);
+            })
+
+            //
+            $("input[name='chk']").click(function () {
+                let chks = $("input[name='chk']:checked");
+                let all = $("input[name='chk']");
+                if (chks.length === all.length) {
+                    $("#chks").prop("checked", true);
+                } else {
+                    $("#chks").prop("checked", false);
+                }
+            })
+
+        })
+
+        //todo:反选及其他
+
+    </script>
+
+
     <!--声明css代码域-->
     <style type="text/css">
         tr {
